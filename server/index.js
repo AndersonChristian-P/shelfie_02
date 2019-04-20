@@ -4,7 +4,7 @@ const express = require("express")
 const app = express()
 const port = 5777
 
-const productCtrl = require("./controllers/controller")
+const productCtrl = require("./controller")
 
 const { CONNECTION_STRING } = process.env
 
@@ -16,4 +16,6 @@ massive(CONNECTION_STRING).then(dbInstance => {
     console.log(`listening on port ${port}`)
   })
 })
+
+app.get("/api/inventory", productCtrl.request)
 
