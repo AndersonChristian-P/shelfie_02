@@ -1,11 +1,19 @@
+require("dotenv").config()
+const massive = require("massive")
 const express = require("express")
 const app = express()
 const port = 5777
 
 const productCtrl = require("./controllers/controller")
 
+const { CONNECTION_STRING } = process.env
+
 app.use(express.json())
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`)
+massive(CONNECTION_STRING).then(dbInstance => {
+  app.set("db", dbInstance)
+  app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+  })
 })
+
