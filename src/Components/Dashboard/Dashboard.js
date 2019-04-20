@@ -12,9 +12,14 @@ export default class Dashboard extends Component {
   }
 
   render() {
+
+    const list = this.props.inventory.map((item, i) => {
+      return <Product key={i} item={item} />
+    })
+
     return (
-      <div> Dashboard
-        <Product />
+      <div className="dashboard">
+        {list}
       </div>
     )
   }
