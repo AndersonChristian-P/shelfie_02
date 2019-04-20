@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import "./Form.css"
+
 export default class Form extends Component {
   constructor() {
     super()
@@ -28,11 +30,13 @@ export default class Form extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form">
 
-        <div className="form-product-image" >
+        <div>
           <img
+            className="form-product-image"
             src={this.state.image}
+            onError={(e) => { e.target.onerror = null; e.target.src = "/images/image-not-available.png" }}
             alt="product"
           />
         </div>
@@ -68,8 +72,8 @@ export default class Form extends Component {
         </div>
 
         <div className="form-buttons">
-          <button onClick={this.handleClickCancel} className="form-button-cancel">Cancel</button>
-          <button className="form-button-add">Add to Inventory</button>
+          <button onClick={this.handleClickCancel} className="form-button cancel">Cancel</button>
+          <button className="form-button add">Add to Inventory</button>
         </div>
 
 
@@ -78,7 +82,3 @@ export default class Form extends Component {
   }
 }
 
-
-// I think one of these is the code to reference a default image
-// onError = "/images/image-not-available.png"
-// onError="this.src='/images/image-not-available.png'"

@@ -1,0 +1,48 @@
+.form {
+  background: #3AD886;
+  width: 28vw;
+  height: 55vh;
+  padding: 1em;
+  border-radius: 5px;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: stretch;
+}
+
+.form-product-image {
+  margin-left: 10%;
+  width: 200;
+}
+
+input {
+  margin-top: 0.5em;
+}
+
+.form-product-image-url {
+  text-align: left;
+  margin-top: 0.5em;
+}
+
+.form-product-name {
+  text-align: left;
+  margin-top: 0.5em;
+}
+
+.form-product-price {
+  text-align: left;
+  margin-top: 0.5em;
+}
+
+.form-buttons {
+  margin-top: 0.5em;
+}
+
+.form-button {
+  background-color: #D34735;
+  border-radius: 5px;
+  height: 4vh;
+  font-weight: 500;
+}
