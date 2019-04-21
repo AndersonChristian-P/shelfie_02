@@ -1,0 +1,10 @@
+header {
+  background-color: #AB2A19;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  margin-left: 2em;
+}

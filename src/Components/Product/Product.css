@@ -2,6 +2,7 @@
   background-color: #D34735;
   margin-bottom: 2vh;
   width: 32vw;
+  height: 29vh;
   border-radius: 5px;
   padding: 1rem;
   display: flex;
@@ -17,4 +18,28 @@
   text-align: left;
   margin-left: 1rem;
   text-transform: capitalize;
+  width: 100%;
+  height: 100%;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.dashboard-buttons {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+}
+
+.dashboard-button {
+  background-color: #3AD886;
+  border-radius: 5px;
+  height: 4vh;
+  font-weight: 500;
 }

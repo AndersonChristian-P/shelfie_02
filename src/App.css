@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .user-display {
   display: flex;
@@ -11,3 +9,4 @@
   align-content: stretch;
   margin: 2vw 12vw;
 }
+

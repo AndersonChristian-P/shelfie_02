@@ -11,7 +11,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      inventory: []
+      inventory: [],
+
     }
   }
 
@@ -35,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header className="header" />
 
         <div className="user-display">
           <Dashboard inventory={this.state.inventory} getInventory={this.getInventory} />
