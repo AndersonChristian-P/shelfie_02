@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import "./Form.css"
+import axios from "axios";
 
 export default class Form extends Component {
   constructor() {
@@ -28,6 +29,14 @@ export default class Form extends Component {
     })
   }
 
+  handleClickAdd = () => {
+    let body = this.state
+    axios.post("/api/product", body)
+      .then(this.props.getInventory)
+    this.handleClickCancel()
+  }
+
+
   render() {
     return (
       <div className="form">
@@ -35,6 +44,7 @@ export default class Form extends Component {
         <div>
           <img
             className="form-product-image"
+            width="297"
             src={this.state.image}
             onError={(e) => { e.target.onerror = null; e.target.src = "/images/image-not-available.png" }}
             alt="product"
@@ -75,7 +85,7 @@ export default class Form extends Component {
 
         <div className="form-buttons">
           <button onClick={this.handleClickCancel} className="form-button cancel">Cancel</button>
-          <button className="form-button add">Add to Inventory</button>
+          <button onClick={this.handleClickAdd} className="form-button add">Add to Inventory</button>
         </div>
 
 
