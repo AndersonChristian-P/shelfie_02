@@ -41,35 +41,37 @@ export default class Form extends Component {
           />
         </div>
 
-        <div className="form-product-image-url"> Image URL:
+        <form>
+          <div className="form-product-image-url"> Image URL:
           <br />
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="image"
-            value={this.state.image}
-          />
-        </div>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="image"
+              value={this.state.image}
+            />
+          </div>
 
-        <div className="form-product-name"> Product Name:
+          <div className="form-product-name"> Product Name:
           <br />
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="name"
-            value={this.state.name}
-          />
-        </div>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="name"
+              value={this.state.name}
+            />
+          </div>
 
-        <div className="form-product-price"> Price:
+          <div className="form-product-price"> Price:
           <br />
-          <input
-            onChange={this.handleChange}
-            type="number"
-            name="price"
-            value={this.state.price}
-          />
-        </div>
+            <input
+              onChange={this.handleChange}
+              type="number"
+              name="price"
+              value={this.state.price}
+            />
+          </div>
+        </form>
 
         <div className="form-buttons">
           <button onClick={this.handleClickCancel} className="form-button cancel">Cancel</button>
