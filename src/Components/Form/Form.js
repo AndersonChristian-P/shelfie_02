@@ -16,7 +16,7 @@ export default class Form extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (this.props.productToEdit !== prevProps.productToEdit) {
       this.setState({
         name: this.props.productToEdit.name,
@@ -26,6 +26,17 @@ export default class Form extends Component {
         productToEdit: this.props.productToEdit
       })
     }
+  }
+
+  saveChangedProduct = (product) => {
+    let newProduct = {
+      name: this.state.name,
+      image: this.state.image,
+      price: this.state.price
+    }
+    axios.put(`/api/inventory/${product.productToEdit.id}`, newProduct)
+      .then(this.props.getInventory)
+    this.handleClickCancel()
   }
 
   handleChange = (event) => {
@@ -40,6 +51,8 @@ export default class Form extends Component {
       image: "",
       name: "",
       price: 0,
+      buttonText: "Add to Inventory",
+      productToEdit: null
     })
   }
 
@@ -99,11 +112,17 @@ export default class Form extends Component {
 
         <div className="form-buttons">
           <button onClick={this.handleClickCancel} className="form-button cancel">Cancel</button>
-          <button onClick={this.handleClickAdd} className="form-button add">{this.state.buttonText}</button>
+
+          {
+            this.state.productToEdit ?
+              <button onClick={() => this.saveChangedProduct(this.state)} className="form-button add">{this.state.buttonText}</button> :
+              <button onClick={this.handleClickAdd} className="form-button add">{this.state.buttonText}</button>
+          }
+
         </div>
 
 
-      </div>
+      </div >
     )
   }
 }
