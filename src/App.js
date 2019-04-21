@@ -12,7 +12,7 @@ class App extends Component {
     super()
     this.state = {
       inventory: [],
-
+      productToEdit: null
     }
   }
 
@@ -39,8 +39,16 @@ class App extends Component {
         <Header className="header" />
 
         <div className="user-display">
-          <Dashboard inventory={this.state.inventory} getInventory={this.getInventory} />
-          <Form getInventory={this.getInventory} />
+          <Dashboard
+            inventory={this.state.inventory}
+            getInventory={this.getInventory}
+          />
+
+          <Form
+            getInventory={this.getInventory}
+            productToEdit={this.state.productToEdit}
+          />
+
         </div>
 
       </div>

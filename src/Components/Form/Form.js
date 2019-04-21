@@ -11,6 +11,20 @@ export default class Form extends Component {
       image: "",
       name: "",
       price: 0,
+      buttonText: "Add to Inventory",
+      productToEdit: null
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.productToEdit !== prevProps.productToEdit) {
+      this.setState({
+        name: this.props.productToEdit.name,
+        image: this.props.productToEdit.img,
+        price: this.props.productToEdit.price,
+        buttonText: "Save Changes",
+        productToEdit: this.props.productToEdit
+      })
     }
   }
 
@@ -85,7 +99,7 @@ export default class Form extends Component {
 
         <div className="form-buttons">
           <button onClick={this.handleClickCancel} className="form-button cancel">Cancel</button>
-          <button onClick={this.handleClickAdd} className="form-button add">Add to Inventory</button>
+          <button onClick={this.handleClickAdd} className="form-button add">{this.state.buttonText}</button>
         </div>
 
 
