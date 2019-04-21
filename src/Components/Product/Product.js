@@ -31,8 +31,13 @@ export default class Product extends Component {
           </div>
 
           <div className="dashboard-buttons">
-            <button onClick={() => this.handleDeleteClick(item.id)} className="dashboard-button">Delete</button>
-            <button className="dashboard-button">Edit</button>
+            <button
+              onClick={() => this.handleDeleteClick(item.id)}
+              className="dashboard-button">Delete</button>
+
+            <button
+              onClick={() => this.props.getProductToEdit(item)}
+              className="dashboard-button">Edit</button>
           </div>
 
         </div>

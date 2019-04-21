@@ -16,6 +16,12 @@ class App extends Component {
     }
   }
 
+  getProductToEdit = (product) => {
+    this.setState({
+      productToEdit: product
+    })
+  }
+
   getInventory = () => {
     axios.get("/api/inventory")
       .then(res => {
@@ -42,6 +48,7 @@ class App extends Component {
           <Dashboard
             inventory={this.state.inventory}
             getInventory={this.getInventory}
+            getProductToEdit={this.getProductToEdit}
           />
 
           <Form
