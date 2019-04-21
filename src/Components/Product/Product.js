@@ -3,12 +3,16 @@ import React, { Component } from "react"
 import "./Product.css"
 
 export default class Product extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
 
     }
+  }
+
+  handleDeleteClick = (id) => {
+    this.props.handleDelete(id)
   }
 
   render() {
@@ -23,6 +27,11 @@ export default class Product extends Component {
           <div>
             <div>{item.name}</div>
             <div>{`$${item.price}`}</div>
+          </div>
+
+          <div className="dashboard-buttons">
+            <button onClick={() => this.handleDeleteClick(item.id)} className="dashboard-button">Delete</button>
+            <button className="dashboard-button">Edit</button>
           </div>
         </div>
 

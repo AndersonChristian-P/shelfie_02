@@ -38,7 +38,7 @@ class App extends Component {
         <Header />
 
         <div className="user-display">
-          <Dashboard inventory={this.state.inventory} />
+          <Dashboard inventory={this.state.inventory} getInventory={this.getInventory} />
           <Form getInventory={this.getInventory} />
         </div>
 
